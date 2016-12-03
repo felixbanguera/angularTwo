@@ -1,3 +1,4 @@
+import { DatabindingModule } from './databinding/databinding.module';
 import { ComponentBasicModule } from './component-basic/component-basic.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ComponentBasicModule
+    ComponentBasicModule,
+    DatabindingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
