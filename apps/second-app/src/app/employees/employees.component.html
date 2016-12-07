@@ -1,0 +1,10 @@
+<ul>
+  <div class="container">
+    <!--app-employee *ngFor="let employee of employees" [employee]="employee"  ></app-employee-->
+    <li *ngFor="let employee of employees">
+      <span> {{employee.id}} - {{employee.name}} </span>
+      <a [routerLink]="['/employees', employee.id]">View</a>
+    </li>
+  </div>
+</ul>
+aaaaaaa
