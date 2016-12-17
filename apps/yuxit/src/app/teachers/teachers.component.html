@@ -1,0 +1,19 @@
+<div class="container">  
+  <h1> Teachers </h1>
+  <div class="well">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Last Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let teacher of teachers">
+          <th><a [routerLink]="['/teachers', teacher.id]">{{teacher.name}}</a></th>
+          <th><a [routerLink]="['/teachers', teacher.id]">{{teacher.last_name}}</a></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

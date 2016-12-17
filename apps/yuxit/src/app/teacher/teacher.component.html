@@ -1,0 +1,15 @@
+<div class="container">
+    <h1> {{teacher.name}} {{teacher.last_name}} </h1>
+    <div class="well">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="teacher.name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" id="last_name" [(ngModel)]="teacher.last_name" name="last_name">
+        </div>
+        <a routerLink="/teachers">Save</a>
+        <a routerLink="/teachers">Back</a>
+    </div>  
+</div>
