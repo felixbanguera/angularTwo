@@ -1,0 +1,24 @@
+<h1>first example: interpolation</h1>
+<p>
+  Will try interpolation {{iterpolation_test}} --here
+</p>
+<hr/>
+<h1>second example: property binding</h1>
+<ul>
+  <li>
+    <input [value]="iterpolation_test">
+  </li>
+  <li>
+    <span class="newselector" [ngClass]="{noerase: true}"> This is the span </span>
+  </li>
+</ul>
+<h1> third example: event binding</h1>
+<button (click)="testClick()">click me!! </button>
+<h1> fourth example, intercomponnents</h1>
+<app-llaju [testData]="numerito"></app-llaju>
+<h1> Fifth example, event binding</h1>
+<span >here??? testing events</span>
+<app-llaju (testEvent)="bindTestEvent($event)"></app-llaju>
+
+<h1> SIxth example, model binding</h1>
+<input [(ngModel)]="model.nombre">
