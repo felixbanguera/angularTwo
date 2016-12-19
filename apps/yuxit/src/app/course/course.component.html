@@ -1,23 +1,27 @@
-<div class="container">
-    <h1> {{course.name}}</h1>
-    <div class="well">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" [(ngModel)]="course.name" name="name">
-        </div>
-        <div class="form-group">
-            <label for="starting_date">Starting Date</label>
-            <input type="text" class="form-control" id="starting_date" [(ngModel)]="course.starting_date" name="starting_date">
-        </div>
-        <div class="form-group">
-            <label for="duration">Duration</label>
-            <input type="text" class="form-control" id="duration" [(ngModel)]="course.duration" name="duration">
-        </div>
-        <div class="form-group">
-            <label for="teacher">Teacher</label>
-            <input type="text" class="form-control" id="teacher" [(ngModel)]="course.teacher" name="teacher">
-        </div>
-        <a routerLink="/courses">Save</a>
-        <a routerLink="/courses">Back</a>
-    </div>  
-</div>
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="courseForm">
+    <div class="container">
+        <h1> {{course.name}}</h1>
+        <div class="well">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" formControlName="name">
+            </div>
+            <div class="form-group">
+                <label for="starting_date">Starting Date</label>                
+                <ng2-datepicker class="form-control" formControlName="starting_date"
+                date-format="'DD-MM-YYYY'"
+                ></ng2-datepicker>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration</label>
+                <input type="text" class="form-control" id="duration" formControlName="duration">
+            </div>
+            <div class="form-group">
+                <label for="teacher">Teacher</label>
+                <input type="text" class="form-control" id="teacher" formControlName="teacher">
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="course.invalid">Save</button>
+            <a routerLink="/courses">Back</a>
+        </div>  
+    </div>
+</form>

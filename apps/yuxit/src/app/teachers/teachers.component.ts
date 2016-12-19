@@ -1,3 +1,4 @@
+import { OrderbyPipe } from './../shared/orderby.pipe';
 import { TeacherService } from './../model/teacher.service';
 import { inject } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
@@ -10,16 +11,12 @@ import { Component, OnInit } from '@angular/core';
 export class TeachersComponent implements OnInit {
   public teachers = [];
   public teachersToPrint = [];
-  public sort = {sortBy: "name", direction: "up"};
+  public variableH = '-name';
   constructor(public teacherSrevice: TeacherService) { }
 
   ngOnInit() {
-    this.teachers = this.teacherSrevice.teachersList();
-    
-  }
-
-  sortData(attr: String){
-
+    this.teacherSrevice.getTeachers()
+    .subscribe(teachers => this.teachers = teachers);
   }
 
 }

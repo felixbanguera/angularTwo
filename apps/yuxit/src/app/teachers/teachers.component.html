@@ -9,7 +9,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let teacher of teachers">
+        <tr *ngFor="let teacher of teachers | orderBy:variableH">
           <th><a [routerLink]="['/teachers', teacher.id]">{{teacher.name}}</a></th>
           <th><a [routerLink]="['/teachers', teacher.id]">{{teacher.last_name}}</a></th>
         </tr>
